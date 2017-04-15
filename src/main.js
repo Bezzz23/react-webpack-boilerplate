@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './test.scss';
+import Title from './components/Title/index.jsx';
 
 ReactDOM.render(
-  <h1 className={styles.testClass}>Hello</h1>,
+  <Title />,
   document.getElementById('mount-point'),
 );
