@@ -7,11 +7,17 @@ module.exports = {
     publicPath: 'build/',
     filename: 'bundle.js',
   },
+
+  resolve: {
+    modulesDirectories: ['node_modules'],
+    extensions: ['', '.js'],
+  },
+
   module: {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel',
+        loaders: ['babel'],
         exclude: [/node_modules/, /public/],
       },
       {
@@ -20,8 +26,8 @@ module.exports = {
         exclude: [/node_modules/, /public/],
       },
       {
-        test: /\.less$/,
-        loader: 'style-loader!css-loader!autoprefixer-loader!less',
+        test: /\.scss$/,
+        loader: 'style-loader!css-loader?modules=true&localIdentName=[name]__[local]!autoprefixer-loader!sass!',
         exclude: [/node_modules/, /public/],
       },
       {
